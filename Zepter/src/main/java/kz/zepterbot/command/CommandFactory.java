@@ -1,9 +1,6 @@
 package kz.zepterbot.command;
 
-import kz.zepterbot.command.implement.id001_ShowInfo;
-import kz.zepterbot.command.implement.id002_SelectLang;
-import kz.zepterbot.command.implement.id003_SelectDepartment;
-import kz.zepterbot.command.implement.id024_RegistrationSellManager;
+import kz.zepterbot.command.implement.*;
 import kz.zepterbot.exeption.NotRealizedMethodException;
 
 public class CommandFactory {
@@ -21,6 +18,10 @@ public class CommandFactory {
                 return new id002_SelectLang();
             case 3:
                 return new id003_SelectDepartment();
+            case 4:
+                return new id004_Office();
+            case 6:
+                return new id006_Customers();
             case 10:
                 return new id024_RegistrationSellManager();
 

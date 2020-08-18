@@ -1,10 +1,7 @@
 package kz.zepterbot.command;
 
 import kz.zepterbot.dao.DaoFactory;
-import kz.zepterbot.dao.implement.ButtonDao;
-import kz.zepterbot.dao.implement.KeyboardMarkUpDao;
-import kz.zepterbot.dao.implement.MessageDao;
-import kz.zepterbot.dao.implement.UserDao;
+import kz.zepterbot.dao.implement.*;
 import kz.zepterbot.util.BotUtil;
 import kz.zepterbot.util.Const;
 import kz.zepterbot.util.SetDeleteMessages;
@@ -62,6 +59,8 @@ public abstract class Command {
     protected static MessageDao messageDao = factory.getMessageDao();
     protected static KeyboardMarkUpDao keyboardMarkUpDao = factory.getKeyboardMarkUpDao();
     protected static UserDao userDao = factory.getUserDao();
+    protected static OfficeDao officeDao = factory.getOfficeDao();
+
 
     public abstract boolean execute() throws SQLException, TelegramApiException;
 

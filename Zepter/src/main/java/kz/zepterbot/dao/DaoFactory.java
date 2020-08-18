@@ -61,4 +61,5 @@ public class DaoFactory {
         return new UserDao();
     }
 
+    public OfficeDao getOfficeDao(){return new OfficeDao();}
 }
