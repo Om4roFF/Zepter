@@ -15,8 +15,7 @@ public class UserDao extends AbstractDao<User> {
     }
 
     public boolean checkUser(Long chat_id){
-        sql = "SELECT count(*) FROM PUBLIC.USER " +
-                "WHERE CHAT_ID = ?";
+        sql = "SELECT count(*) FROM PUBLIC.USER WHERE CHAT_ID = ?";
         return getJdbcTemplate().queryForObject(sql,setParam(chat_id),Integer.class) >0;
     }
 
@@ -31,7 +30,7 @@ public class UserDao extends AbstractDao<User> {
     }
 
     public User getUserByChatId(long chatId) {
-        sql = "SELECT * FROM USERS WHERE CHAT_ID = ?";
+        sql = "SELECT * FROM USER WHERE CHAT_ID = ?";
         return getJdbcTemplate().queryForObject(sql, setParam(chatId), this::mapper);
     }
 

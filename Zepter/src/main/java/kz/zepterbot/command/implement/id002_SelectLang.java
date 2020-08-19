@@ -29,10 +29,9 @@ public class id002_SelectLang extends Command {
             LanguageService.setLanguage(chatId, Language.en);
         }
     }
+
     private int welcome() throws TelegramApiException{
         return botUtils.sendMessage(Const.WELCOME_TEXT_WHEN_START,chatId);
     }
-//
-//    private int
 
 }

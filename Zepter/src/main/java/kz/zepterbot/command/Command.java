@@ -60,6 +60,8 @@ public abstract class Command {
     protected static KeyboardMarkUpDao keyboardMarkUpDao = factory.getKeyboardMarkUpDao();
     protected static UserDao userDao = factory.getUserDao();
     protected static OfficeDao officeDao = factory.getOfficeDao();
+    protected static SalaesManagerUserDao salaesManagerUserDao = factory.getSalesManagerUserDao();
+    protected static AdminDao adminDao = factory.getAdminDao();
     protected static ComplaintsDao complaintsDao = factory.getComplaintsDao();
     protected static OffersDao offersDao = factory.getOffersDao();
     protected static ProductsDao productsDao = factory.getProductsDao();
@@ -127,6 +129,10 @@ public abstract class Command {
 
     protected boolean isRegistered() {
         return userDao.isRegistered(chatId);
+    }
+
+    protected boolean isSMRegistered() {
+        return salaesManagerUserDao.isRegistered(chatId);
     }
 
     protected boolean isButton(int buttonId) {
@@ -276,4 +282,9 @@ public abstract class Command {
     }
 
     protected boolean hasMessageText() { return  update.hasMessage() && update.getMessage().hasText(); }
+
+    protected boolean isAdmin() {
+        return adminDao.isAdmin(chatId);
+    }
+
 }

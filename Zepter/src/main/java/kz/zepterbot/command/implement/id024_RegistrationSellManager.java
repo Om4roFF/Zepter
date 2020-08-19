@@ -2,24 +2,21 @@ package kz.zepterbot.command.implement;
 
 import kz.zepterbot.command.Command;
 import kz.zepterbot.util.Registration;
+import kz.zepterbot.util.SMRegistration;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-
-import java.sql.SQLException;
 
 public class id024_RegistrationSellManager extends Command {
 
-    private Registration registration = new Registration();
-    private StringBuilder sb = new StringBuilder();
-
+    private SMRegistration smRegistration = new SMRegistration();
 
     @Override
-    public boolean execute() throws TelegramApiException,  SQLException {
+    public boolean execute() throws TelegramApiException{
         deleteMessage(updateMessageId);
-        if (!isRegistered()) {
-            if (!registration.isRegistration(update, botUtils)) {
+        if (!isSMRegistered()) {
+            if (!smRegistration.isRegistration(update, botUtils)) {
                 return COMEBACK;
             } else {
-                userDao.insert(registration.getUser());
+                salaesManagerUserDao.insert(smRegistration.getSmUser());
                 sendMessageWithAddition();
                 return EXIT;
             }
