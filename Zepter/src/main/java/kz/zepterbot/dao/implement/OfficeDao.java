@@ -2,6 +2,7 @@ package kz.zepterbot.dao.implement;
 
 import kz.zepterbot.dao.AbstractDao;
 import kz.zepterbot.entity.custom.Office;
+import kz.zepterbot.util.Const;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 public class OfficeDao extends AbstractDao<Office> {
 
     public void insert(Office office){
-        sql = "INSERT INTO OFFICE_USERS(FULL_NAME,PHONE_NUMBER) " +
+        sql = "INSERT INTO "+ Const.TABLE_NAME +".OFFICE_USERS(FULL_NAME,PHONE_NUMBER) " +
                 "VALUES(?,?)";
         getJdbcTemplate().update(sql,setParam(office.getFullName(),office.getPhone()));
     }

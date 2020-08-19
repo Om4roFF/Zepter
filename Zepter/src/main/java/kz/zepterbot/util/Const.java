@@ -21,21 +21,13 @@ public class Const {
     // ------- INT ID --------------------
     public final static int MAX_SIZE_MESSAGE = 4096;
     // ------- SELECT LANGUAGE -----------
-    public final static int RU_LANGUAGE = 2;
-    public final static int KZ_LANGUAGE = 3;
+    public final static int RU_LANGUAGE = 3;
+    public final static int KZ_LANGUAGE = 2;
     public final static int EN_LANGUAGE = 4;
     // ------------------------------------
     public static final String SPLIT = ";";
     public static final String ID_MARK = "/comId";
     // ------------MESSAGE_ID---------------
-    public static final int SET_NAME_OF_THE_BOT = 5;
-    public static final int SET_YOUR_BUG = 6;
-    public static final int FEEDBACK = 7;
-    public static final int WRONG_DATA_TEXT = 8;
-    public static final int SET_PHOTO = 9;
-    public static final int SET_MESSAGE_ABOUT_BOT = 12;
-    public static final int GO_TO_MENU = 13;
-    public static final int CHOOSE_SOMEONE = 14;
     public static final int GET_FULL_NAME_FROM_REGISTRATION = 200;
     public static final int GET_PHONE_NUMBER_FROM_REGISTRATION = 201;
     public static final int WRONG_DATA_MESSAGE = 202;
@@ -47,6 +39,9 @@ public class Const {
     public static final int GO_TO_MAIN_MENU = 6;
     public static final int GO_TO_MENU_FOR_CUSTOMERS = 7;
     public final static int CHOOSE_BUTTON = 8;
-
+    public final static int WRITE_SENTENCE = 9;
+    public static final int SEND_APPEAL = 10;
+    public static final int SEND_REQUEST = 11;
+    public static final int REQUEST = 12;
 
 }

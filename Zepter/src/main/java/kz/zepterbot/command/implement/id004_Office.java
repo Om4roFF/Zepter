@@ -25,6 +25,7 @@ public class id004_Office extends Command {
                 }
                 return COMEBACK;
             case SET_MOBILE_PHONE_NUMBER:
+                users.setPhone(updateMessageText);
                 officeDao.insert(users);
                 goToMainMenu();
 

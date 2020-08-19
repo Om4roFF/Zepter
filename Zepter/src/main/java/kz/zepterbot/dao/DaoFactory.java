@@ -62,4 +62,12 @@ public class DaoFactory {
     }
 
     public OfficeDao getOfficeDao(){return new OfficeDao();}
+
+    public OffersDao getOffersDao(){return new OffersDao();}
+
+    public ComplaintsDao getComplaintsDao(){return new ComplaintsDao();}
+
+    public ProductsDao getProductsDao(){return new ProductsDao();}
+
+    public ClientsDao getClientsDao(){return new ClientsDao();}
 }

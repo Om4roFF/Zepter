@@ -13,6 +13,7 @@ public class id002_SelectLang extends Command {
     @Override
     public boolean execute() throws SQLException, TelegramApiException {
         chosenLanguage();
+        welcome();
         return EXIT;
     }
 
@@ -27,6 +28,9 @@ public class id002_SelectLang extends Command {
         if (isButton(Const.EN_LANGUAGE)) {
             LanguageService.setLanguage(chatId, Language.en);
         }
+    }
+    private int welcome() throws TelegramApiException{
+        return botUtils.sendMessage(Const.WELCOME_TEXT_WHEN_START,chatId);
     }
 //
 //    private int

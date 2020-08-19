@@ -16,12 +16,14 @@ public class CommandFactory {
                 return new id001_ShowInfo();
             case 2:
                 return new id002_SelectLang();
-            case 3:
-                return new id003_SelectDepartment();
             case 4:
                 return new id004_Office();
             case 6:
                 return new id006_Customers();
+            case 7:
+                return new id007_ComplaintsAndSuggestions();
+            case 8:
+                return new id008_SumbitRequest();
             case 10:
                 return new id024_RegistrationSellManager();
 

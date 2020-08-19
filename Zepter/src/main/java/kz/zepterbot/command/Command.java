@@ -60,7 +60,10 @@ public abstract class Command {
     protected static KeyboardMarkUpDao keyboardMarkUpDao = factory.getKeyboardMarkUpDao();
     protected static UserDao userDao = factory.getUserDao();
     protected static OfficeDao officeDao = factory.getOfficeDao();
-
+    protected static ComplaintsDao complaintsDao = factory.getComplaintsDao();
+    protected static OffersDao offersDao = factory.getOffersDao();
+    protected static ProductsDao productsDao = factory.getProductsDao();
+    protected static ClientsDao clientsDao = factory.getClientsDao();
 
     public abstract boolean execute() throws SQLException, TelegramApiException;
 
