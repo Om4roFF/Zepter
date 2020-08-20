@@ -12,24 +12,32 @@ public class id004_Office extends Command {
     Office users = new Office();
     @Override
     public boolean execute() throws SQLException, TelegramApiException {
-        switch (waitingType){
-            case START:
-                getFullName();
-                waitingType = WaitingType.SET_FULL_NAME;
-                return COMEBACK;
-            case SET_FULL_NAME:
-                if (hasMessageText() && updateMessageText.length()<=30){
-                    getContact();
-                    users.setFullName(updateMessageText);
-                    waitingType = WaitingType.SET_MOBILE_PHONE_NUMBER;
-                }
-                return COMEBACK;
-            case SET_MOBILE_PHONE_NUMBER:
-                users.setPhone(updateMessageText);
-                officeDao.insert(users);
-                goToMainMenu();
-
+        if (!isOURegistered()){
+            switch (waitingType){
+                case START:
+                    getFullName();
+                    waitingType = WaitingType.SET_FULL_NAME;
+                    return COMEBACK;
+                case SET_FULL_NAME:
+                    if (hasMessageText() && updateMessageText.length()<=30){
+                        getContact();
+                        users.setFullName(updateMessageText);
+                        waitingType = WaitingType.SET_MOBILE_PHONE_NUMBER;
+                    }
+                    return COMEBACK;
+                case SET_MOBILE_PHONE_NUMBER:
+                    users.setPhone(update.getMessage().getContact().getPhoneNumber());
+                    users.setChatId(chatId);
+                    officeDao.insert(users);
+                    goToMainMenu();
+                    return EXIT;
+            }
         }
+        else {
+            goToMainMenu();
+            return EXIT;
+        }
+
         return EXIT;
     }
 

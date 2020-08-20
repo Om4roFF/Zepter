@@ -1,7 +1,6 @@
 package kz.zepterbot.dao;
 
 import kz.zepterbot.dao.implement.*;
-import kz.zepterbot.entity.standart.SalesManagerUser;
 import kz.zepterbot.util.PropertiesUtil;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
@@ -77,4 +76,9 @@ public class DaoFactory {
 
     public ClientsDao getClientsDao(){return new ClientsDao();}
 
+    public SurveyQuestionsDao getSurveyQuestDao(){return new SurveyQuestionsDao();}
+
+    public OfficeSurveyAnswersDao getSurveyAnswersDao(){return new OfficeSurveyAnswersDao();}
+
+    public ManagerSurveyAnswersDao getManagerSurveyAnswersDao(){return new ManagerSurveyAnswersDao();}
 }

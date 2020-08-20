@@ -3,6 +3,7 @@ package kz.zepterbot.dao.implement;
 import kz.zepterbot.dao.AbstractDao;
 import kz.zepterbot.entity.standart.SalesManagerUser;
 import kz.zepterbot.entity.standart.User;
+import kz.zepterbot.util.Const;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,6 +18,12 @@ public class SalaesManagerUserDao extends AbstractDao<SalesManagerUser> {
     public boolean checkUser(long chat_id){
         sql = "SELECT count(*) FROM PUBLIC.SALES_MANAGER WHERE CHAT_ID = ?";
         return getJdbcTemplate().queryForObject(sql,setParam(chat_id),Integer.class) >0;
+    }
+
+    public String getFullNameByChatId(long chatId){
+        sql = "SELECT FULL_NAME FROM "+ Const.TABLE_NAME+".SALES_MANAGER " +
+                "WHERE CHAT_ID = ? ";
+        return getJdbcTemplate().queryForObject(sql,setParam(chatId,chatId),String.class);
     }
 
     public boolean isRegistered(long chatId) {

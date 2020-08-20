@@ -42,6 +42,7 @@ public class id008_SumbitRequest extends Command {
             case SET_MOBILE_PHONE_NUMBER:
                 if (update.getMessage().hasContact()){
                     clients.setPhoneNumber(updateMessageText);
+                    clientsDao.insert(clients);
                     sendMessage(Const.REQUEST,chatId);
                     return EXIT;
                 }

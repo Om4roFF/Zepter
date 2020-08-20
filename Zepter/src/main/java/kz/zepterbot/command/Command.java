@@ -66,6 +66,10 @@ public abstract class Command {
     protected static OffersDao offersDao = factory.getOffersDao();
     protected static ProductsDao productsDao = factory.getProductsDao();
     protected static ClientsDao clientsDao = factory.getClientsDao();
+    protected static SurveyQuestionsDao surveyQuestionsDao = factory.getSurveyQuestDao();
+    protected static OfficeSurveyAnswersDao officeSurveyAnswersDao = factory.getSurveyAnswersDao();
+    protected static ManagerSurveyAnswersDao managerSurveyAnswersDao = factory.getManagerSurveyAnswersDao();
+
 
     public abstract boolean execute() throws SQLException, TelegramApiException;
 
@@ -133,6 +137,10 @@ public abstract class Command {
 
     protected boolean isSMRegistered() {
         return salaesManagerUserDao.isRegistered(chatId);
+    }
+
+    protected boolean isOURegistered(){
+        return officeDao.isRegistered(chatId);
     }
 
     protected boolean isButton(int buttonId) {

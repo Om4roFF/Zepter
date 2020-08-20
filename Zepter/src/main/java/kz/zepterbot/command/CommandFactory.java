@@ -28,6 +28,8 @@ public class CommandFactory {
                 return new id10_sellManagerShowInfo();
             case 11:
                 return new id011_adminPanel();
+            case 12:
+                return new id0012_Survey();
             case 24:
                 return new id024_RegistrationSellManager();
 

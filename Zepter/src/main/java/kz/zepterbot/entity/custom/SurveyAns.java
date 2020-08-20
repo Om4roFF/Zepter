@@ -3,9 +3,9 @@ package kz.zepterbot.entity.custom;
 import lombok.Data;
 
 @Data
-public class Office {
+public class SurveyAns {
     private int id;
+    private long chat_id;
+    private String answer;
     private String fullName;
-    private String phone;
-    private long chatId;
 }
